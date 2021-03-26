@@ -9,18 +9,38 @@ export interface LaunchDetailsProps {
 const LaunchDetails: React.FC<LaunchDetailsProps> = ({ data }) => {
   if (!data.launch) return <div>Launch Unavailable</div>;
 
+  const {
+    flight_number,
+    mission_name,
+    details,
+    rocket,
+    launch_site,
+  } = data.launch;
+
   return (
     <div className="launch-details">
-      <div className="launch-details-status">
-        <span>Flight {data.launch.flight_number}</span>
+      <div className="launch-details-item">
+        <h4 className="title">
+          <span className="spec-item">Mission Name: </span>
+          {mission_name}
+        </h4>
+        <p className="spec">
+          <span className="spec-item">Flight Number: </span>
+          {flight_number}
+        </p>
+        <p className="spec">
+          <span className="spec-item">Rocket Name: </span>
+          {rocket?.rocket_name}
+        </p>
+        <p className="spec">
+          <span className="spec-item">Launch Site: </span>
+          {launch_site?.site_name}
+        </p>
+        <p className="spec">
+          <span className="spec-item">Launch Details: </span>
+          {details}.
+        </p>
       </div>
-
-      <h2>
-        {data.launch.mission_name} - {data.launch.rocket?.rocket_name}
-      </h2>
-
-      <p>{data.launch.launch_site?.site_name}</p>
-      <p>{data.launch.details}</p>
     </div>
   );
 };

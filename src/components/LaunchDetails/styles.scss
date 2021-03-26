@@ -1,0 +1,21 @@
+.launch-details {
+  list-style-type: none;
+  width: 60%;
+  margin: 0 auto;
+
+  .spec-item {
+    color: #71cefb;
+  }
+
+  .launch-details-item {
+    background-color: #0e161b;
+    margin: 30px auto;
+    padding: 10px 10px;
+    box-shadow: 0 1px 10px gray;
+    border-radius: 10px;
+
+    .spec {
+      padding: 10px 0;
+    }
+  }
+}

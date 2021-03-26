@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { LaunchesQuery } from "../../generated/graphql";
 import "./styles.scss";
 
@@ -53,6 +54,11 @@ const Launches: React.FC<LaunchesProps> = ({ data }) => {
                     <span className="spec-item">Upcoming Launch: </span>
                     {launch.upcoming ? <span>Yes</span> : <span>No</span>}
                   </p>
+                  <div className="button-launch-detail">
+                    <Link to={`/launch/${launch.flight_number}`}>
+                      Launch Details
+                    </Link>
+                  </div>
                 </li>
               )
             );
