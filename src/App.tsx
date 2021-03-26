@@ -1,10 +1,13 @@
 import React from "react";
+import Launches from "./components/Launches";
+import LaunchDetails from "./components/LaunchDetails";
 import "./App.scss";
 
 const App = () => {
   return (
     <div>
-      <h1>Hi There!</h1>
+      <Launches />
+      <LaunchDetails />
     </div>
   );
 };
