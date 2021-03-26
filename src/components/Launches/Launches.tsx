@@ -9,42 +9,55 @@ export interface LaunchesProps {
 const Launches: React.FC<LaunchesProps> = ({ data }) => {
   return (
     <div className="launches-container">
-      <h2>All SpaceX Launches</h2>
+      <h2 className="main-title">All SpaceX Launches</h2>
 
-      <ol className="launches-list">
+      <ul className="launches-list">
         {!!data.launches &&
           data.launches.map((launch, index) => {
             return (
               !!launch && (
                 <li key={index} className="launches-list-item">
-                  <h4 className="title">Mission Name: {launch.mission_name}</h4>
-                  <p className="spec">Flight Number: {launch.flight_number}</p>
-                  <p className="spec">Year of Launch: {launch.launch_year}</p>
+                  <h4 className="title">
+                    <span className="spec-item">Mission Name: </span>
+                    {launch.mission_name}
+                  </h4>
                   <p className="spec">
-                    Local Date of Launch: {launch.launch_date_local}
+                    <span className="spec-item">Flight Number: </span>
+                    {launch.flight_number}
                   </p>
                   <p className="spec">
-                    Launch Success:{" "}
+                    <span className="spec-item">Year of Launch: </span>
+                    {launch.launch_year}
+                  </p>
+                  <p className="spec">
+                    <span className="spec-item">Local Date of Launch: </span>
+                    {launch.launch_date_local}
+                  </p>
+                  <p className="spec">
+                    <span className="spec-item">Launch Success: </span>
                     {launch.launch_success ? (
                       <span>Success</span>
                     ) : (
                       <span>Failure</span>
                     )}
                   </p>
-                  <p className="spec">Launch Details: {launch.details}.</p>
                   <p className="spec">
-                    Tentative Launch:{" "}
+                    <span className="spec-item">Launch Details: </span>
+                    {launch.details}.
+                  </p>
+                  <p className="spec">
+                    <span className="spec-item">Tentative Launch: </span>
                     {launch.is_tentative ? <span>Yes</span> : <span>No</span>}
                   </p>
                   <p className="spec">
-                    Upcoming Launch:{" "}
+                    <span className="spec-item">Upcoming Launch: </span>
                     {launch.upcoming ? <span>Yes</span> : <span>No</span>}
                   </p>
                 </li>
               )
             );
           })}
-      </ol>
+      </ul>
     </div>
   );
 };

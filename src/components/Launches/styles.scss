@@ -1,0 +1,27 @@
+.launches-container {
+  .main-title {
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .launches-list {
+    list-style-type: none;
+    width: 60%;
+    margin: 0 auto;
+
+    .spec-item {
+      color: #71cefb;
+    }
+
+    .launches-list-item {
+      background-color: #0e161b;
+      margin: 30px auto;
+      padding: 10px 10px;
+      box-shadow: 0 1px 10px gray;
+
+      .spec {
+        padding: 10px 0;
+      }
+    }
+  }
+}
